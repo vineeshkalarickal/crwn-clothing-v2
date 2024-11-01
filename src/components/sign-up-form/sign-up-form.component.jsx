@@ -18,7 +18,9 @@ const defaultFormFields = {
 const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
-  console.log(formFields);
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -36,10 +38,7 @@ const SignUpForm = () => {
       await createUserDocumentFromAuth(user, { displayName });
 
       alert("User created successfully");
-      setFormFields(defaultFormFields);
-
-      console.log(user);
-
+      resetFormFields();
       // Redirect to login page here if needed
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
@@ -64,7 +63,7 @@ so add it onChange = {handleChange}
   return (
     <div className="sign-up-container">
       <h1>Don't have an account?</h1>
-      <h4>Sign Up with your email and password</h4>
+      <h4>Sign Up with your email</h4>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
