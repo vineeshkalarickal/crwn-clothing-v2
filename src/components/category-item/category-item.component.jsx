@@ -1,15 +1,20 @@
-import './category-item.styles.scss';
+import "./category-item.styles.scss";
 
 const CategoryItem = ({ category: { title, imageUrl } }) => {
   //const { title, imageUrl } = category;
-
-  return (<div className="category-container">
-    <div className='background-image' style={{ backgroundImage: `url(${imageUrl})` }} />
-    <div className="category-body-container">
-      <h2>{title}</h2>
-      <button>Shop now</button>
+  const titleName = title[0].toUpperCase() + title.slice(1);
+  return (
+    <div className="category-container">
+      <div
+        className="background-image"
+        style={{ backgroundImage: `url(${imageUrl})` }}
+      />
+      <div className="category-body-container">
+        <h2>{titleName}</h2>
+        <button>Shop now</button>
+      </div>
     </div>
-  </div>)
-}
+  );
+};
 
 export default CategoryItem;
