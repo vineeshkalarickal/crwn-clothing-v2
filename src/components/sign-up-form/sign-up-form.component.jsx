@@ -1,5 +1,7 @@
 import { useState } from "react";
 import FormInput from "../form-input/form-input.component.jsx";
+import Button from "../button/button.component.jsx";
+import "./sign-up-form.styles.scss";
 
 import {
   createAuthUserWithEmailAndPassword,
@@ -60,8 +62,9 @@ You provided a `value` prop to a form field without an `onChange` handler. This 
 so add it onChange = {handleChange}
 */
   return (
-    <div>
-      <h1>Sign Up with your email and password</h1>
+    <div className="sign-up-container">
+      <h1>Don't have an account?</h1>
+      <h4>Sign Up with your email and password</h4>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
@@ -105,7 +108,7 @@ so add it onChange = {handleChange}
         />
 
         <br />
-        <button type="submit">Sign Up</button>
+        <Button type="submit">Sign Up</Button>
       </form>
     </div>
   );
