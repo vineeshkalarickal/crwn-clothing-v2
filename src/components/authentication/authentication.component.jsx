@@ -23,7 +23,7 @@ const SignIn = () => {
   //   const { user } = await signInWithGoogleRedirect();
   //   const userDocRef = await createUserDocumentFromAuth(user);
   // };
-  // so use
+  // so use this method
   // useEffect(() => async () => {
   //   const response = await getRedirectResult(auth);
   //   if (response.user) {
